@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article.update(task_params)
+    @article.update(article_params)
     redirect_to article_path(@article)
   end
 
@@ -37,7 +37,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
-  def task_params
+  def article_params
     params.require(:article).permit(:title, :content)
   end
 end
